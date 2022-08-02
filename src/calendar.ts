@@ -56,7 +56,7 @@ export class Calendar {
         // console.log('values=', values);
         if (values === null) return [];
 
-        let items=JSON.parse(values);
+        const items=JSON.parse(values);
         //console.log('readID items=',items );
 
         for (let i = 0; i < items.length; i++) {
@@ -80,7 +80,7 @@ export class Calendar {
                 console.log('update yes');
                 //let obj:any;
 
-                for (let k in task) {
+                for (const k in task) {
                     // const keyTyped = k as keyof typeof item;
                     if (k in item) {
                         console.log('key yes')

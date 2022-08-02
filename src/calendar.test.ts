@@ -5,13 +5,13 @@ describe("Inspect Calendar methods", () => {
         localStorage.clear();
     });
 
-    let task: Task = {
+    const task: Task = {
         id: 1,
         category: 'work',
         text: 'test',
         date: new Date('02/28/2019')
     };
-    let calendar: Calendar = new Calendar(task);
+    const calendar: Calendar = new Calendar(task);
 
     it("Calendar is a class", () => {
         expect(new Calendar(task)).toBeInstanceOf(Calendar);
@@ -108,7 +108,7 @@ describe("Inspect Calendar methods", () => {
         };
         calendar.createTask(taskNew);
 
-        let items = calendar.deleteTask(taskNew.id);
+        const items = calendar.deleteTask(taskNew.id);
 
         let itemDelete: Task | [] = [];
 
@@ -152,7 +152,7 @@ describe("Inspect Calendar methods", () => {
             calendar.createTask(task);
         });
 
-        let items = calendar.sortTask("id");
+        const items = calendar.sortTask("id");
 
         items.forEach(function (item) {
             item.date = new Date(item.date);
@@ -217,7 +217,7 @@ describe("Inspect Calendar methods", () => {
             calendar.createTask(task);
         });
 
-        let items = calendar.sortTask("date");
+        const items = calendar.sortTask("date");
 
         items.forEach(function (item) {
             item.date = new Date(item.date);
