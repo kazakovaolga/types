@@ -24,14 +24,11 @@ describe("Inspect Calendar methods", () => {
     });
 
     it("create new task and same task", () => {
-        let items = calendar.createTask(task);
-        // let item = calendar.readTask(task.id);        
+        let items = calendar.createTask(task);           
         items[0].date = new Date(items[0].date);
         expect(items[0]).toEqual(task);
-
         //same task
-        items = calendar.createTask(task);
-        // item = calendar.readTask(task.id);     
+        items = calendar.createTask(task);         
         items[0].date = new Date(items[0].date);
         expect(items[0]).toEqual(task);
     });
@@ -67,11 +64,8 @@ describe("Inspect Calendar methods", () => {
             date: new Date('02/28/2019')
         };
 
-        const items = calendar.updateTask(taskNew);
-        console.log('update task items=', items);
-
+        const items = calendar.updateTask(taskNew);        
         items[0].date = new Date(items[0].date);
-
         expect(items[0]).toEqual(taskNew);
     });
 
@@ -86,7 +80,6 @@ describe("Inspect Calendar methods", () => {
         };
 
         const items = calendar.updateTask(taskNew);
-
         let itemUpdate: Task | [] = [];
 
         items.forEach(function (item) {
@@ -109,7 +102,6 @@ describe("Inspect Calendar methods", () => {
         calendar.createTask(taskNew);
 
         const items = calendar.deleteTask(taskNew.id);
-
         let itemDelete: Task | [] = [];
 
         items.forEach(function (item) {
